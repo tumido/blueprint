@@ -1,8 +1,37 @@
-Feature: Increase PVC size in JupyterHub
+Feature: As a data scientist I want more space in JupyterHub storage
 
     Background:
         Given I am a user of MOC-CNV
         * I have access to JupyteHub on MOC-CNV
+
+    Scenario: I know about Ops
+        Given I know how to create PRs
+        * I know what PVC means
+
+        When Increase PVC size in JupyteHub
+
+        Then My JupyterHub storage is increased
+
+    Scenario: I don't know about Ops stuff
+        Given I don't know how to create PRs
+        * I don't know what PVC means
+
+        When I open an Issue
+
+        Then My JupyterHub storage is increased
+
+Feature: As a ops person I want to increase Jupyterhub storage for somebody
+
+    Scenario: Increase the PVC for the user
+        Given User requested a size increase
+        * User is a user of MOC-CNV
+        * User has access to JupyteHub on MOC-CNV
+
+        When I increase PVC size in JupyterHub
+
+        Then User is happy
+
+Feature: Increase PVC size in JupyterHub
 
     Scenario: I use the default PVC
 
